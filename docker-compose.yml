@@ -1,0 +1,14 @@
+version: "3"
+services: 
+    redis_host:
+        image: redis
+    app:
+        build: node_app
+        ports: 
+            - 3000:3000
+        environment: 
+            - redis_host=redis_host
+        # links: 
+        #     - redis
+        # depends_on: 
+        #     - redis
